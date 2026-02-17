@@ -1,27 +1,21 @@
-# The __init__ constructor method
-
-class Person:
-    def __init__(self, name, age):
-        """
-        The constructor initializes the object's state.
-        :param name: Name of the person
-        :param age: Age of the person
-        """
+class Student:
+    # Constructor method
+    def __init__(self, name, student_id, major):
+        print(f"Creating student: {name}...")
         self.name = name
-        self.age = age
-        print(f"Person {self.name} has been created.")
+        self.id = student_id
+        self.major = major
 
-class Laptop:
-    def __init__(self, brand, model, ram=8):
-        self.brand = brand
-        self.model = model
-        self.ram = ram
+    # A simple method to show info
+    def display(self):
+        print(f"ID: {self.id} | Name: {self.name} | Major: {self.major}")
 
-if __name__ == "__main__":
-    p1 = Person("John", 30)
-    print(f"Name: {p1.name}, Age: {p1.age}")
+# --- Creating 3 Students ---
+s1 = Student("Alice", "001", "Computer Science")
+s2 = Student("Bob",   "002", "Mathematics")
+s3 = Student("Eve",   "003", "Physics")
 
-    l1 = Laptop("Apple", "MacBook Air")
-    l2 = Laptop("Dell", "XPS", ram=16)
-    print(f"{l1.brand} {l1.model} has {l1.ram}GB RAM")
-    print(f"{l2.brand} {l2.model} has {l2.ram}GB RAM")
+print("\n--- Student List ---")
+s1.display()
+s2.display()
+s3.display()

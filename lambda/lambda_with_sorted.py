@@ -1,24 +1,18 @@
-# Using lambda as a key for sorted()
+# --- Example 1: Sort by length of string ---
+fruits = ["apple", "fig", "banana", "kiwi"]
+# Sort by length (shortest to longest)
+by_len = sorted(fruits, key=lambda x: len(x))
 
-# Example 1: Sort list of tuples by the second element (Age)
-students = [
-    ("Alice", 25),
-    ("Bob", 20),
-    ("Charlie", 30),
-    ("David", 22)
-]
+# --- Example 2: Sort tuples by the second value ---
+# (Name, Score)
+scores = [("Alice", 50), ("Bob", 100), ("Charlie", 75)]
+by_score = sorted(scores, key=lambda x: x[1])
 
-# Sort by age (index 1)
-sorted_by_age = sorted(students, key=lambda x: x[1])
+# --- Example 3: Sort numbers by absolute value ---
+nums = [-10, 5, -20, 1]
+by_abs = sorted(nums, key=lambda x: abs(x))
 
-# Example 2: Sort strings by length
-fruits = ["apple", "banana", "kiwi", "cherry", "blueberry"]
-sorted_by_len = sorted(fruits, key=lambda s: len(s))
-
-# Example 3: Sort by last letter
-sorted_by_last_char = sorted(fruits, key=lambda s: s[-1])
-
-if __name__ == "__main__":
-    print("Sorted by age:", sorted_by_age)
-    print("Sorted by length:", sorted_by_len)
-    print("Sorted by last letter:", sorted_by_last_char)
+# --- Printing ---
+print(f"By length: {by_len}")
+print(f"By score:  {by_score}")
+print(f"By abs:    {by_abs}")

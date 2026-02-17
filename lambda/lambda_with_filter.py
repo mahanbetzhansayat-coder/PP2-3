@@ -1,19 +1,22 @@
-# Using lambda with filter() to select items
+# Data list
+values = [10, -5, 3, -1, 0, 8, 12]
 
-numbers = [1, -5, 10, -2, 3, 8, -9]
+# --- Example 1: Positive numbers ---
+positives = list(filter(lambda x: x > 0, values))
 
-# Example 1: Keep only positive numbers
-positives = list(filter(lambda x: x > 0, numbers))
+# --- Example 2: Negative numbers ---
+negatives = list(filter(lambda x: x < 0, values))
 
-# Example 2: Keep only even numbers
-evens = list(filter(lambda x: x % 2 == 0, numbers))
+# --- Example 3: Even numbers ---
+evens = list(filter(lambda x: x % 2 == 0, values))
 
-# Example 3: Filter words longer than 3 letters
-words = ["hi", "hello", "yo", "python", "is", "cool"]
-long_words = list(filter(lambda w: len(w) > 3, words))
+# --- Example 4: Filter short words ---
+words = ["hi", "hello", "yo", "greetings", "a"]
+short_words = list(filter(lambda w: len(w) <= 2, words))
 
-if __name__ == "__main__":
-    print(f"Original numbers: {numbers}")
-    print(f"Positive numbers: {positives}")
-    print(f"Even numbers: {evens}")
-    print(f"Long words: {long_words}")
+# --- Printing ---
+print(f"All values: {values}")
+print(f"Positives:  {positives}")
+print(f"Negatives:  {negatives}")
+print(f"Evens:      {evens}")
+print(f"Short words:{short_words}")

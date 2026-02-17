@@ -1,30 +1,22 @@
-# Class Variables vs Instance Variables
+class Laptop:
+    # Class variable (same for all laptops)
+    brand = "Generic Brand"
 
-class Employee:
-    # Class variable (shared by all instances)
-    company_name = "TechCorp"
-    employee_count = 0
-    
-    def __init__(self, name, salary):
-        # Instance variables (unique to each instance)
-        self.name = name
-        self.salary = salary
-        
-        # Increment class variable
-        Employee.employee_count += 1
+    def __init__(self, model, ram):
+        # Instance variables (different for each laptop)
+        self.model = model
+        self.ram = ram
 
-if __name__ == "__main__":
-    print(f"Employees at start: {Employee.employee_count}")
-    
-    emp1 = Employee("Alice", 50000)
-    emp2 = Employee("Bob", 60000)
-    
-    print(f"Employees after hiring: {Employee.employee_count}")
-    
-    # Accessing class variable
-    print(f"{emp1.name} works at {emp1.company_name}")
-    print(f"{emp2.name} works at {Employee.company_name}")
-    
-    # Changing class variable affects all
-    Employee.company_name = "MegaTech"
-    print(f"{emp1.name} now works at {emp1.company_name}")
+# Creating instances
+l1 = Laptop("ProBook", "8GB")
+l2 = Laptop("AirBook", "16GB")
+
+print(f"Laptop 1: {l1.brand} {l1.model}")
+print(f"Laptop 2: {l2.brand} {l2.model}")
+
+print("\n--- Changing Class Variable ---")
+# Changing the brand for ALL laptops
+Laptop.brand = "SuperTech"
+
+print(f"Laptop 1: {l1.brand} {l1.model}")
+print(f"Laptop 2: {l2.brand} {l2.model}")

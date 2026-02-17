@@ -1,20 +1,22 @@
-# Using lambda with map() to transform lists
-
+# Data list
 numbers = [1, 2, 3, 4, 5]
 
-# Example 1: Square every number
+# --- Example 1: Square numbers ---
 squared = list(map(lambda x: x ** 2, numbers))
 
-# Example 2: Convert Celsius to Fahrenheit
-celsius = [0, 20, 30, 100]
-fahrenheit = list(map(lambda c: (c * 9/5) + 32, celsius))
+# --- Example 2: Cube numbers ---
+cubed = list(map(lambda x: x ** 3, numbers))
 
-# Example 3: Capitalize names
-names = ["alice", "bob", "charlie"]
-capitalized = list(map(lambda n: n.capitalize(), names))
+# --- Example 3: Add 10 to each number ---
+added = list(map(lambda x: x + 10, numbers))
 
-if __name__ == "__main__":
-    print(f"Original: {numbers}")
-    print(f"Squared: {squared}")
-    print(f"Temps (F): {fahrenheit}")
-    print(f"Names: {capitalized}")
+# --- Example 4: Uppercase strings ---
+words = ["apple", "banana", "cherry"]
+uppercased = list(map(lambda w: w.upper(), words))
+
+# --- Printing ---
+print(f"Original: {numbers}")
+print(f"Squared:  {squared}")
+print(f"Cubed:    {cubed}")
+print(f"Plus 10:  {added}")
+print(f"Words:    {uppercased}")

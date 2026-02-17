@@ -1,22 +1,22 @@
-# Multiple Inheritance: Inheriting from two parents
+# Parent 1
+class Father:
+    def skill_1(self):
+        print("I am good at sports (from Father).")
 
-class Worker:
-    def do_work(self):
-        print("I am working...")
+# Parent 2
+class Mother:
+    def skill_2(self):
+        print("I am good at art (from Mother).")
 
-class Student:
-    def study(self):
-        print("I am studying...")
+# Child inherits from BOTH
+class Child(Father, Mother):
+    def skill_3(self):
+        print("I am good at coding (Child's own skill).")
 
-class TeachingAssistant(Worker, Student):
-    """TA is both a Worker and a Student."""
-    def assist(self):
-        print("I am assisting the professor.")
+# --- Testing ---
+kid = Child()
 
-if __name__ == "__main__":
-    ta = TeachingAssistant()
-    
-    # Can access methods from both parents
-    ta.do_work()  # From Worker
-    ta.study()    # From Student
-    ta.assist()   # Own method
+print("--- Kid's Skills ---")
+kid.skill_1()
+kid.skill_2()
+kid.skill_3()

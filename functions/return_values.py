@@ -1,22 +1,41 @@
-# Demonstrating return statements
+# --- Example 1: Simple Addition ---
+def add_numbers(x, y):
+    result = x + y
+    return result
 
-def add_numbers(a, b):
-    """Returns the sum of two numbers."""
-    return a + b
+# --- Example 2: Calculate Area ---
+def get_rectangle_area(width, height):
+    area = width * height
+    return area
 
-def get_user_stats(name, age):
-    """Returns a formatted string."""
-    return f"User {name} is {age} years old."
+# --- Example 3: Check if number is even ---
+def is_even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
 
-def get_min_max(numbers):
-    """Returns multiple values (tuple)."""
-    return min(numbers), max(numbers)
+# --- Example 4: Return multiple values ---
+def get_min_max(numbers_list):
+    minimum = min(numbers_list)
+    maximum = max(numbers_list)
+    return minimum, maximum
 
-if __name__ == "__main__":
-    result_sum = add_numbers(10, 50)
-    print(f"Sum: {result_sum}")
-    
-    # Returning multiple values
-    scores = [10, 5, 99, 23]
-    lowest, highest = get_min_max(scores)
-    print(f"Lowest score: {lowest}, Highest score: {highest}")
+# --- Using the return values ---
+
+# 1. Addition
+sum_val = add_numbers(10, 50)
+print(f"Sum result: {sum_val}")
+
+# 2. Area
+rect_area = get_rectangle_area(5, 10)
+print(f"Area result: {rect_area}")
+
+# 3. Boolean check
+number = 4
+print(f"Is {number} even? {is_even(number)}")
+
+# 4. Multiple returns
+my_nums = [1, 5, 2, 9, 3]
+low, high = get_min_max(my_nums)
+print(f"Min: {low}, Max: {high}")

@@ -1,28 +1,29 @@
-# Demonstrating *args and **kwargs
+# --- Example 1: *args (Arbitrary Arguments) ---
+# Useful when we don't know how many items will be passed
+def shop_list(*items):
+    print("Shopping List:")
+    for item in items:
+        print(f"- {item}")
 
-def sum_all(*args):
-    """
-    *args allows passing an arbitrary number of positional arguments.
-    Inside the function, args is a tuple.
-    """
-    total = sum(args)
-    print(f"Sum of {args} is: {total}")
-    return total
+# --- Example 2: Summing with *args ---
+def calculate_total(*prices):
+    total = sum(prices)
+    print(f"Total price: ${total}")
 
-def print_profile(**kwargs):
-    """
-    **kwargs allows passing an arbitrary number of keyword arguments.
-    Inside the function, kwargs is a dictionary.
-    """
-    print("\nUser Profile:")
-    for key, value in kwargs.items():
-        print(f"- {key}: {value}")
+# --- Example 3: **kwargs (Arbitrary Keyword Arguments) ---
+# Useful for dictionaries or profiles
+def print_student_info(**details):
+    print("\nStudent Details:")
+    # Loop through the dictionary keys and values
+    for key, value in details.items():
+        print(f"{key}: {value}")
 
-if __name__ == "__main__":
-    # Using *args
-    sum_all(1, 2, 3)
-    sum_all(10, 20, 30, 40, 50)
-    
-    # Using **kwargs
-    print_profile(name="Alice", age=25, city="New York", role="Developer")
-    print_profile(product="Laptop", price=1000, in_stock=True)
+# --- Testing ---
+
+# Using args
+shop_list("Apples", "Bananas", "Milk", "Bread")
+calculate_total(10, 20, 5, 5)
+
+# Using kwargs
+print_student_info(name="Alibek", course="Python", year=2)
+print_student_info(name="Dina", grade="A", city="Astana")

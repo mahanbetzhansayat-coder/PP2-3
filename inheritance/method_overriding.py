@@ -1,33 +1,29 @@
-# Method Overriding: Changing parent behavior in child
-
 class Shape:
     def area(self):
-        print("Area not defined for generic shape")
-        return 0
+        print("Area is unknown for generic shape.")
 
-class Rectangle(Shape):
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
-        
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side
+
     # Overriding the area method
     def area(self):
-        return self.width * self.height
+        return self.side * self.side
 
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
-        
+
     # Overriding the area method
     def area(self):
-        return 3.14 * (self.radius ** 2)
+        return 3.14 * self.radius * self.radius
 
-if __name__ == "__main__":
-    generic = Shape()
-    generic.area()
-    
-    rect = Rectangle(10, 5)
-    print(f"Rectangle Area: {rect.area()}")
-    
-    circ = Circle(7)
-    print(f"Circle Area: {circ.area()}")
+# --- Testing ---
+generic = Shape()
+generic.area()
+
+sq = Square(4)
+print(f"Square Area: {sq.area()}")
+
+ci = Circle(5)
+print(f"Circle Area: {ci.area()}")
